@@ -10,12 +10,12 @@ RUN apt-get update \
   nginx \
   mc
   
+COPY dumb.sql /
 COPY phppgadmin /usr/share/nginx/html/phppgadmin
 COPY etc/nginx/sites-available/* /etc/nginx/sites-available/
 COPY etc/postgresql/9.3/main/* /etc/postgresql/9.3/main/
 COPY entrypoint.sh /
-COPY dumb.sql /
-  
+
 RUN service postgresql start \
         && psql -U postgres -c "CREATE USER support WITH SUPERUSER PASSWORD 'support';" \
         && psql -U postgres -c "CREATE DATABASE application WITH OWNER support;"  \
