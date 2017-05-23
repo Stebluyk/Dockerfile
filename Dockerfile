@@ -7,7 +7,8 @@ RUN apt-get update \
   postgresql-contrib \
   php5-fpm \
   php5-pgsql \
-  nginx
+  nginx \
+  mc
   
 COPY phppgadmin /usr/share/nginx/html/phppgadmin
 COPY etc/nginx/sites-available/phppgadmin /etc/nginx/sites-available/
