@@ -11,7 +11,7 @@ RUN apt-get update \
   mc
   
 COPY phppgadmin /usr/share/nginx/html/phppgadmin
-COPY etc/nginx/sites-available/phppgadmin /etc/nginx/sites-available/
+COPY etc/nginx/sites-available/* /etc/nginx/sites-available/
 COPY etc/postgresql/9.3/main/* /etc/postgresql/9.3/main/
 COPY entrypoint.sh /
 COPY dumb.sql /
